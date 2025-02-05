@@ -16,7 +16,7 @@ export function formatDate(startDate: string): string {
 }
 
 export function sortByPriority<
-  T extends { priority: number;[key: string]: any },
+  T extends { priority: number; [key: string]: unknown } 
 >(arr: T[]): T[] {
   return arr.sort((a, b) => a.priority - b.priority);
 }

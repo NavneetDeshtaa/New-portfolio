@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ModalTrigger } from "./animated-modal";
-import { useModal } from "@/context";
 import { Project } from "@/lib/types";
 
 interface Props {
@@ -58,7 +57,7 @@ function PinContainer({
   title?: string;
   className?: string;
   containerClassName?: string;
-  onClick?: Function;
+  onClick?: () => void;
 }) {
   const [transform, setTransform] = useState(
     "translate(-50%,-50%) rotateX(0deg)"
@@ -111,6 +110,7 @@ function PinContainer({
     </ModalTrigger>
   );
 }
+
 
 function PinPerspective({ title }: { title?: string }) {
   return (

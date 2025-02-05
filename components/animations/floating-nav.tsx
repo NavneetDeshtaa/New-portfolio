@@ -45,7 +45,7 @@ export function FloatingNav({ className }: { className?: string }) {
 
     useMotionValueEvent(scrollYProgress, "change", (current) => {
         if (typeof current === "number") {
-            let direction = current! - scrollYProgress.getPrevious()!;
+            const direction = current! - scrollYProgress.getPrevious()!;
 
             if (scrollYProgress.get() < 0) {
                 console.log(scrollYProgress.get());

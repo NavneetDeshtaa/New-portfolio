@@ -31,7 +31,7 @@ export function Hero() {
         <div className="flex flex-col items-center justify-center w-full">
           <MotionUp delay={0}>
             <h1 className="text-3xl md:text-6xl text-neutral-700 dark:text-blue-100 !leading-snug text-center mx-auto font-[900]">
-              Hi 👋, I'm {personalInfo.name.split(" ")[0]} Deshta
+              Hi 👋, I&apos;m {personalInfo.name.split(" ")[0]} Deshta
               <br />
               <Highlight delay={1.8}>{personalInfo.position}</Highlight>
             </h1>

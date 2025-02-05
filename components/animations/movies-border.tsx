@@ -11,6 +11,18 @@ import { useRef } from "react";
 import { cn } from "@/lib/utils";
 import { BorderBeam } from "./border-beam";
 
+interface MovingBorderProps {
+  borderRadius?: string;
+  children: React.ReactNode;
+  as?: React.ElementType;
+  containerClassName?: string;
+  borderClassName?: string;
+  duration?: number;
+  className?: string;
+  showBeam?: boolean;
+  [key: string]: any;
+}
+
 export function MovingBorder({
   borderRadius = "1.75rem",
   children,
@@ -21,21 +33,10 @@ export function MovingBorder({
   className,
   showBeam = true,
   ...otherProps
-}: {
-  borderRadius?: string;
-  children: React.ReactNode;
-  as?: any;
-  containerClassName?: string;
-  borderClassName?: string;
-  duration?: number;
-  className?: string;
-  showBeam?: boolean;
-  [key: string]: any;
-}) {
+}: MovingBorderProps) {
   return (
     <Component
       className={cn(
-        // remove h-16 w-40, add  md:col-span-2
         "bg-transparent relative text-xl p-[1px] overflow-hidden md:col-span-2 md:row-span-1",
         containerClassName
       )}
@@ -61,20 +62,22 @@ export function MovingBorder({
   );
 }
 
+interface MovingBorderChildProps {
+  children: React.ReactNode;
+  duration?: number;
+  rx?: string;
+  ry?: string;
+  [key: string]: any;
+}
+
 export const MovingBorderChild = ({
   children,
   duration = 2000,
   rx,
   ry,
   ...otherProps
-}: {
-  children: React.ReactNode;
-  duration?: number;
-  rx?: string;
-  ry?: string;
-  [key: string]: any;
-}) => {
-  const pathRef = useRef<any>();
+}: MovingBorderChildProps) => {
+  const pathRef = useRef<SVGRectElement>(null); 
   const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {
