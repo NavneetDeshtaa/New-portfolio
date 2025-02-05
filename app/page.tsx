@@ -1,5 +1,5 @@
 import './globals.css'; 
-import { Hero, ExperienceSkills, Projects, Testimonials, Contact } from '../components/sections';
+import { Hero, ExperienceSkills, Projects, Contact } from '../components/sections';
 import { ModalProvider } from '../context/modal-provider';
 // const Testimonials = React.lazy(() => import('../components/sections/Testimonials'));
 
@@ -10,7 +10,6 @@ export default async function page() {
       <Hero />
       <ExperienceSkills />
       <Projects />
-      {/* <Testimonials/> */}
       <Contact/>
     </ModalProvider>
   );
