@@ -13,7 +13,7 @@ interface ModalContextType {
   open: boolean;
   setOpen: (open: boolean) => void;
   modalData: Project | null;
-  setModalData: (data: Project) => void;
+  setModalData: (data: Project | null) => void;
   openModal: () => void;
   closeModal: () => void;
 }
