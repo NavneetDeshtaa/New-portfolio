@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useRef } from "react";
 import { useOutsideClick } from "@/lib/hooks";
 import { useModal } from "@/context";
 
@@ -17,9 +17,9 @@ export function ModalTrigger({
   children: ReactNode;
   className?: string;
 }) {
-  const { setOpen } = useModal();
+  const { openModal } = useModal();
   return (
-    <div className={className} onClick={() => setOpen(true)}>
+    <div className={className} onClick={openModal}>
       {children}
     </div>
   );
@@ -32,32 +32,15 @@ export function ModalBody({
   children: ReactNode;
   className?: string;
 }) {
-  const { open, setModalData } = useModal();
-
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [open]);
-
-  function handleClose() {
-    setModalData(null);
-    setOpen(false);
-  }
-
+  const { open, closeModal } = useModal();
   const modalRef = useRef(null);
-  const { setOpen } = useModal();
-  useOutsideClick(modalRef, handleClose);
+  useOutsideClick(modalRef, closeModal);
 
   return (
     <AnimatePresence>
       {open && (
         <motion.div
-          initial={{
-            opacity: 0,
-          }}
+          initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
             backdropFilter: "blur(10px)",
@@ -66,10 +49,9 @@ export function ModalBody({
             opacity: 0,
             backdropFilter: "blur(0px)",
           }}
-          className="fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-full  flex items-center justify-center z-50 px-3"
+          className="fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-full flex items-center justify-center z-50 px-3"
         >
           <Overlay />
-
           <motion.div
             ref={modalRef}
             className={cn(
@@ -161,15 +143,10 @@ function Overlay({ className }: { className?: string }) {
 }
 
 function CloseIcon() {
-  const { setOpen, setModalData } = useModal();
-
-  function handleClose() {
-    setModalData(null);
-    setOpen(false);
-  }
+  const { closeModal } = useModal();
 
   return (
-    <button onClick={handleClose} className="absolute top-4 right-4 group">
+    <button onClick={closeModal} className="absolute top-4 right-4 group">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
