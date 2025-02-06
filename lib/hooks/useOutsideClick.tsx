@@ -1,14 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, RefObject } from "react";
 
 export function useOutsideClick(
-    ref: React.RefObject<HTMLDivElement>,
+    ref: RefObject<HTMLDivElement | null>,
     callback: (event: MouseEvent | TouchEvent) => void 
 ) {
     useEffect(() => {
         const listener = (event: MouseEvent | TouchEvent) => { 
-        
             if (!ref.current || ref.current.contains(event.target as Node)) {
                 return;
             }

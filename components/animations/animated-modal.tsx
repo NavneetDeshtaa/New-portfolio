@@ -33,7 +33,7 @@ export function ModalBody({
   className?: string;
 }) {
   const { open, closeModal } = useModal();
-  const modalRef = useRef(null);
+  const modalRef = useRef<HTMLDivElement | null>(null);
   useOutsideClick(modalRef, closeModal);
 
   return (
