@@ -12,22 +12,22 @@ export function Testimonials() {
     const data: Testimonial[] = [
         {
             authorName: "",
-            authorImage: "https://picsum.photos/200/300",
+            authorImage: "",
             position: "Software Engineer",
             companyName: "Tech Corp",
-            companyUrl: "https://picsum.photos/200/300",
+            companyUrl: "",
             content: "Tech Corp has been an incredible place to work, offering great opportunities for growth.Tech Corp has been an incredible place to work, offering great opportunities for growth.",
-            socialLink: "https://picsum.photos/200/300",
+            socialLink: "",
             priority:1,
         },
         {
             authorName: "Jane Smith",
-            authorImage: "https://picsum.photos/200/300",
+            authorImage: "",
             position: "Product Manager",
             companyName: "Innovative Solutions",
-            companyUrl: "https://innovativesolutions.com",
+            companyUrl: "",
             content: "Innovative Solutions provided me with the tools and support to lead product teams successfully.Tech Corp has been an incredible place to work, offering great opportunities for growth.Tech Corp has been an incredible place to work, offering great opportunities for growth.",
-            socialLink: "https://picsum.photos/200/300",
+            socialLink: "",
             priority:2,
         },
     ];
