@@ -31,7 +31,7 @@ const projects: Project[] = [
         title: "Photo- Lytics",
         description: "Created an AI-powered platform that translates textual descriptions into detailed images, achieving 90% positive feedback during initial testing. Implemented Razorpay (TEST MODE) integration for efficient and secure payment gateway functionality, enabling 15+ trial subscriptions. Successfully generated over 70+ high-quality AI images and maintained a 97% success rate for error-free image generation.",
         techStack: ["Razorpay","Clip-drop API", "React", "TailwindCSS", "Bcrypt", ],
-        images: ["/photolytics01.png", "/photolytics02.png", "/photolytics.png", "/photolytics04.png"],
+        images: ["/photolytics01.png", "/photolytics02.png", "/photolytics03.png", "/photolytics04.png"],
         liveUrl: "https://photo-lytics.vercel.app",
         gitUrl: "https://github.com/NavneetDeshtaa/PHOTO-LYTICS",
     },
