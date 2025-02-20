@@ -6,6 +6,11 @@ import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const metadata = {
+  title: 'Portfolio-Navneet Deshta',
+  icons: '/favicon.png',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
