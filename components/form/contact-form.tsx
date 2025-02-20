@@ -98,18 +98,29 @@ export function ContactForm({ className }: Props) {
             {sent ? (
                 <p className="text-center text-sm text-slate-400">Your message has been sent successfully!</p>
             ) : (
-                <button className="group/btn relative h-12 w-full shadow border border-slate-800 bg-gradient-to-r from-gray-900 to-gray-800 px-6 font-medium text-slate-400 transition-colors focus:outline-none" type="submit" disabled={loading || sent}>
+                <button className="group/btn relative h-12 w-full shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset] animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none" type="submit" disabled={loading || sent}>
                     {loading ? (
                         <span className="flex w-full justify-center items-center gap-2">Wait! <LoadingIcon /></span>
                     ) : (
                         <span className="flex w-full justify-center items-center gap-2">Submit <IoSendSharp /></span>
                     )}
+                      <BottomGradient />
                 </button>
             )}
             {error && <p className="mt-4 text-sm text-center text-red-500">{error}</p>}
+      <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-10 sm:my-5 h-[1px] w-full" />
         </form>
     );
 }
+
+const BottomGradient = () => {
+    return (
+        <>
+            <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
+            <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+        </>
+    );
+};
 
 const LoadingIcon = () => (
     <svg aria-hidden="true" role="status" className="inline mr-3 w-5 h-5 text-blue-100 animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -66,19 +66,11 @@ export function Contact() {
           <Heading className="text-5xl" text="Let's Have a Chat" />
 
           <div className="flex sm:flex-nowrap flex-wrap mt-6 sm:mt-12">
-            
             <div
-              className="order-2 sm:order-1 mt-5 w-full md:w-[60%] rounded-lg overflow-hidden sm:mr-10 p-5 md:p-10 flex items-center justify-start relative"
+              className="order-2 sm:order-1 w-full md:w-[60%]  rounded-lg overflow-hidden sm:mr-10 p-5 md:p-10 flex items-end justify-start relative"
               style={{
-                background: "rgba(255, 255, 255, 0.05)", 
-                backdropFilter: "blur(20px)", 
-                WebkitBackdropFilter: "blur(20px)",  
-                borderRadius: "20px", 
-                boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",  
-                padding: "20px",
-            }}
-            
-            
+                background: `linear-gradient(45deg, rgba(0,0,0,0.70) 30%, rgba(1,2,3,0.50) 100%), url('/contactbg.png') center / cover no-repeat`,
+              }}
             >
               <div className="relative flex flex-wrap justify-center items-center w-full shadow-md">
                 <div className="w-full px-6">
@@ -135,7 +127,7 @@ export function Contact() {
             </div>
 
             <div className="order-1 sm:order-2 w-full md:w-[40%] flex flex-col md:ml-auto mt-8 md:mt-0">
-              <ContactForm/>
+              <ContactForm />
             </div>
           </div>
         </MotionUp>
