@@ -102,7 +102,7 @@ export function ExperienceSkills() {
       <Container>
         
         <MotionUp delay={0.1}>
-          <Heading className="text-6xl" text="Academic Background" />
+          <Heading className="text-5xl" text="Academic Background" />
           <Timeline data={sortedExperiences} />
         </MotionUp>
 
