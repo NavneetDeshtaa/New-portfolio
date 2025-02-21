@@ -91,14 +91,14 @@ export function Contact() {
                   </a>
                 </div>
 
-                <div className="w-full lg:w-1/2 px-6 mt-4">
+                {/* <div className="w-full lg:w-1/2 px-6 mt-4">
                   <h6 className="title-font font-semibold text-blue-100 tracking-widest text-xs">
                     WORKING HOURS
                   </h6>
                   <p className="text-blue-100 leading-relaxed">
                     {personalInfo.workingHours}
                   </p>
-                </div>
+                </div> */}
 
                 <div className="w-full lg:w-1/2 px-6 mt-4">
                   <h6 className="title-font font-semibold text-blue-100  tracking-widest text-xs">
