@@ -13,7 +13,7 @@ export function Hero() {
   const data = {
     personalInfo: {
       name: "Navneet Deshta",
-      position: "Software Engineer",
+      position: "Full Stack Developer",
       address: "Himachal Pradesh, India",
       github: "https://github.com/NavneetDeshtaa",
       setupImage: "/contact.webp",
