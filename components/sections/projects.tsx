@@ -24,7 +24,7 @@ const projects: Project[] = [
         description: "Developed a fully functional web-based IDE with support for real-time code editing, project creation, deletion, and code download functionality, allowing users to code in up to 7 programming languages.Implemented secure authentication using OTP-based email verification (Nodemailer, OTP-Generator), ensuring account security and preventing unauthorized access",
         techStack: [ "Node-Mailer","OTP-Generator","Monaco-Editor","React", "Tailwind CSS", "File-Saver", "Morgan"],
         images: ["/devdock01.png", "/devdock02.png"],
-        liveUrl: "https://dev-dock-ide-murex.vercel.app",
+        liveUrl: "https://dev-dock-ide-navneet-deshtas-projects.vercel.app",
         gitUrl: "https://github.com/NavneetDeshtaa/DevDock--IDE",
     },
     {
